@@ -39,18 +39,15 @@ const DateTimeDisplay = () => {
     const {days, hours, minutes, seconds} = getTimeParts(secondsLeft);
 
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center bg-black text-white text-center">
-            <h1 className="text-4xl font-bold mb-6">До {nextYear} года осталось</h1>
-            <div className="flex justify-center gap-12">
+        <div
+            className="w-full h-full flex flex-col items-center justify-center bg-black text-white text-center p-4 min-h-screen">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8">До {nextYear} года осталось</h2>
+            <div className="flex flex-wrap justify-center gap-6 md:gap-12 w-full max-w-4xl">
                 {[{value: days, max: 365, label: getPluralLabel(days, "день", "дня", "дней")},
                     {value: hours, max: 24, label: getPluralLabel(hours, "час", "часа", "часов")},
                     {value: minutes, max: 60, label: getPluralLabel(minutes, "минута", "минуты", "минут")},
-                    {
-                        value: seconds,
-                        max: 60,
-                        label: getPluralLabel(seconds, "секунда", "секунды", "секунд")
-                    }].map((unit, index) => (
-                    <div key={index} className="w-40 flex flex-col items-center">
+                    {value: seconds, max: 60, label: getPluralLabel(seconds, "секунда", "секунды", "секунд")}].map((unit, index) => (
+                    <div key={index} className="w-32 md:w-44 flex flex-col items-center">
                         <motion.div
                             animate={{value: (unit.value / unit.max) * 100}}
                             transition={{duration: 1, ease: "easeOut", repeat: Infinity, repeatType: "mirror"}}
@@ -58,16 +55,10 @@ const DateTimeDisplay = () => {
                             <CircularProgressbar
                                 value={(unit.value / unit.max) * 100}
                                 text={`${unit.value}`}
-                                styles={buildStyles({
-                                    textSize: "24px",
-                                    pathColor: "#00FFFF",
-                                    textColor: "#fff",
-                                    trailColor: "#222",
-                                    strokeLinecap: "round"
-                                })}
+                                styles={buildStyles({textSize: "28px", pathColor: "#00FFFF", textColor: "#fff", trailColor: "#222", strokeLinecap: "round"})}
                             />
                         </motion.div>
-                        <span className="text-lg mt-4">{unit.label}</span>
+                        <span className="text-base md:text-xl mt-4">{unit.label}</span>
                     </div>
                 ))}
             </div>

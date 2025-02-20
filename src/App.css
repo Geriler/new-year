@@ -302,8 +302,8 @@ img, video {
     display: none
 }
 
-.mb-6 {
-    margin-bottom: 1.5rem
+.mb-8 {
+    margin-bottom: 2rem
 }
 
 .mt-4 {
@@ -314,20 +314,32 @@ img, video {
     display: flex
 }
 
-.h-screen {
-    height: 100vh
+.h-full {
+    height: 100%
 }
 
-.w-40 {
-    width: 10rem
+.min-h-screen {
+    min-height: 100vh
 }
 
-.w-screen {
-    width: 100vw
+.w-32 {
+    width: 8rem
+}
+
+.w-full {
+    width: 100%
+}
+
+.max-w-4xl {
+    max-width: 56rem
 }
 
 .flex-col {
     flex-direction: column
+}
+
+.flex-wrap {
+    flex-wrap: wrap
 }
 
 .items-center {
@@ -338,8 +350,8 @@ img, video {
     justify-content: center
 }
 
-.gap-12 {
-    gap: 3rem
+.gap-6 {
+    gap: 1.5rem
 }
 
 .bg-black {
@@ -347,18 +359,22 @@ img, video {
     background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
 }
 
+.p-4 {
+    padding: 1rem
+}
+
 .text-center {
     text-align: center
 }
 
-.text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1
 }
 
-.text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem
 }
 
 .font-bold {
@@ -368,4 +384,24 @@ img, video {
 .text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+}
+
+@media (min-width: 768px) {
+    .md\:w-44 {
+        width: 11rem
+    }
+
+    .md\:gap-12 {
+        gap: 3rem
+    }
+
+    .md\:text-6xl {
+        font-size: 3.75rem;
+        line-height: 1
+    }
+
+    .md\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem
+    }
 }
